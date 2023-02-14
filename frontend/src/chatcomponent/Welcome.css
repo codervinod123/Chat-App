@@ -1,0 +1,23 @@
+body{
+    background: rgba(82, 78, 78, 0.936);
+}
+
+.welcome_container{
+   margin: 0px;
+   box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(135, 75, 188);
+    background: url("../Asset/images.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inner{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+}

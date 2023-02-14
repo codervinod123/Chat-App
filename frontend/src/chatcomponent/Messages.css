@@ -1,0 +1,80 @@
+.current_chat{
+    background: #525560;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 10% 80% 10%;
+    
+}
+
+.current_friend{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background: #83858e;
+}
+.current_friend >div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: aliceblue;
+    justify-content: center;
+}
+
+.current_friend >div p{
+  font-size: 20px;
+}
+
+ .current_friend img{
+    
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.current_friend>svg{
+    font-size: 25px;
+    cursor: pointer;
+    color:rgb(248, 248, 248);
+}
+
+
+
+/* -====================messages sended and recived=============== */
+
+
+.chat_messages{
+    height: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 1rem;
+    background: #263ea8;
+
+}
+
+.message{
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    max-width: 40%;
+    color: aliceblue;
+    padding: 10px 20px;
+    background: green;
+    border-radius: 8px;
+
+}
+
+/* .recieved{
+    justify-content: flex-end;
+}  */
+
+.sended{
+    justify-content: flex-end;
+}

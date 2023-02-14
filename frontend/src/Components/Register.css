@@ -1,0 +1,134 @@
+.register_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #525560;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+
+
+.form_container{
+    height: 100%;
+    margin: 2% 10%;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #282b36 0%, #282b36 100%);
+    padding: 2% 5%;
+    /* background: url("../Asset/mb1.jpg"); */
+    /* background-size:cover; */
+     
+}
+
+.from{
+    padding-left: 4rem;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    /* width: 0%; */
+    color: aliceblue;
+    gap: 1.4rem;
+}
+
+.from span a{
+    color: rgb(32, 131, 218);
+    text-decoration: none;
+}
+
+.details{
+    display: flex;
+    gap: 2rem;
+}
+
+form > input{
+    width: 40%;
+    padding: 10px 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #9a9da8;
+    color: azure;
+    outline: none;
+    font-size: 14px;
+}
+
+::placeholder{
+    color: azure;
+}
+
+.name{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.name>input{
+    width: 19%;
+    padding: 10px 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #9a9da8;
+    color: rgb(249, 246, 246);
+    outline: none;
+   font-size: 14px;
+  
+}
+
+
+
+
+.btn_container{
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.button{
+    width: fit-content;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    color: aliceblue;
+}
+
+.change_pass{
+    background: #525560;
+    transition: .3s ease-in-out;
+}
+
+.change_pass:hover{
+    background: #0C80E0 ;
+    border-color: rgb(253, 251, 249);
+}
+
+.create_acc{
+    background: #0C80E0 ;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.create_acc:hover{
+    background: #525560;
+    border-color: rgb(253, 251, 249);
+}
+.lae
+{
+    position: absolute;
+    top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

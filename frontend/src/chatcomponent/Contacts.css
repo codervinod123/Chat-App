@@ -1,0 +1,144 @@
+
+
+.contact_details{
+    background: #525560;
+    height: 100vh;
+    width: 100%;
+    
+   
+}
+
+.loggedin_candidate{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background: #83858e;
+
+}
+
+.loggedin_candidate img{
+    
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.loggedin_candidate_content_bar{
+    display: flex;
+    gap: 40px;
+    color: aliceblue;
+
+    position: relative;
+}
+.loggedin_candidate_content_bar svg{
+    font-size: 23px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+/* =========================Search bar wher user are bing searched ========*/
+.user_search{
+    
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;    
+}
+
+.user_search input{
+    padding: 10px 130px;
+    border-radius: 10px;
+    background: #83858e;
+    outline: none;
+    color: aliceblue;
+    border: none;
+    
+}
+
+.user_search svg{
+    position: absolute;
+    top: 15px;
+    left: 26px;
+    font-weight: 400;
+    color: aliceblue;
+}
+
+
+
+/* =========any particular contatc to whome you are  going to chat witth */
+
+ ::-webkit-scrollbar{
+    width: 10px;
+ }
+
+ ::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #9a9dac;
+ }
+.user_profile{
+    /* border: 1px solid green; */
+    height: 80vh;
+    overflow-y: scroll;
+    
+}
+
+.profile{
+    height: 60px;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: aliceblue;
+    padding: 0 10px;
+    gap: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.profile:hover{
+    background: #9a9dac;
+}
+
+
+.profile img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* float: left; */
+}
+
+.profile::after{
+   content: "";
+   height: 1px;
+   width: 360px;
+   background: rgb(15, 16, 15);
+   position: absolute;
+   top: 60px;
+   left: 70px;
+}
+
+/* =========================setting ================*/
+
+
+
+
+.modal{
+    position: absolute;
+    top: 35px;
+    left: 10%;
+}
+
+
+/* ================================== current selected user for chat */
+
+.selected{
+    background: rgb(131, 60, 231);
+  }

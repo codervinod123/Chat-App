@@ -1,0 +1,15 @@
+
+.chat_container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    background: rgb(235, 224, 224);
+    /* gap: 1px; */
+    
+}
+
+.contacts{
+   
+    border-right: 1px solid rgb(255, 252, 252);
+}
