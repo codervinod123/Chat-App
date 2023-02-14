@@ -35,7 +35,7 @@ const Messages = ({ currentChat, currentUser }) => {
     const res = await fetch("/addMessage", {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -59,17 +59,19 @@ const Messages = ({ currentChat, currentUser }) => {
       </div>
 
       <div className="chat_messages">
-        {messages.map((msg) => {
-          return (
+        {
+        messages.map((msg) => {
+         return (
             <div>
-              <div className={`message  &{ msg.fromSelf ? 'recieved' : 'sended'} `}>
+              <div className={`message  ${ msg.fromSelf ? "recieved" : "sended"} `}>
                 <div className="content">
                   <p>{msg.message}</p>
                 </div>
               </div>
             </div>
           );
-        })}
+        })
+        }
       </div>
        
        
