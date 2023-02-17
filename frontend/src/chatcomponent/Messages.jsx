@@ -4,7 +4,6 @@ import "./Messages.css";
 import { AiOutlineLogout } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
-import Chats from "./Chats";
 import axios from "axios";
 
 const Messages = ({ currentChat, currentUser }) => {

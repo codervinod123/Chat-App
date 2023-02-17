@@ -2,6 +2,10 @@ const express=require("express");
 const app=express();
 require("dotenv").config();
 
+
+const socket=require("socket.io");
+
+
 app.use(express.json());
 
 require("./db/conn");
@@ -19,6 +23,35 @@ const middleware=(req,res,next)=>{
 
 const PORT=process.env.PORT;
 
-app.listen(PORT,()=>{
+const server=app.listen(PORT,()=>{
     console.log(`listening on port Number ${PORT}`);
 })
+
+
+const io=socket(server,{
+    cors:{
+         origin:"http://localhost:3000/chat",
+         credentials:true,
+    },
+});
+
+
+global.onlineUser=new Map();
+       
+
+io.on("connection",(socket)=>{
+    global.chatSocket=socket;
+    socket.on("add-user",(userId)=>{
+    onlineUsers.set(userId,socket.id);
+  })
+
+  socket.on("send-msg",(data)=>{
+    console.log("sendmsg",{data});
+    const sendUserSocket=onlineUser.get(data.to);
+    if(sendUserSocket)
+    {
+         socket.to(sendUserSocket).emit("msg-recieve",data.messages);
+    }
+ });
+});
+

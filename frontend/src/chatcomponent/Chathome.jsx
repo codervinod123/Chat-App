@@ -8,10 +8,13 @@ import { Navigate } from 'react-router-dom';
 import Messages from './Messages';
 
 
+import {io} from "socket.io-client";
+import { useRef } from 'react';
 
 
 const Chathome = () => {
 
+  const socket=useRef();
 
    function getData(data){
     console.log(data);
@@ -46,6 +49,15 @@ const Chathome = () => {
       fetchData();
     },[])  
 
+
+
+    useEffect(()=>{
+      if(currentUser){
+        socket.current=io("http://localhost:5000/"); 
+        socket.current.emit("add-user",currentUser._id);
+      }
+  },[currentUser])
+
     useEffect(() => {
       if(currentUser){
         async function fetchData() {
@@ -74,7 +86,7 @@ const Chathome = () => {
           </div>
           <div className='dummy'>
            {
-             currentChat ? <Messages currentChat={currentChat} currentUser={currentUser}/>:<Welcome currentUser={currentUser}/>
+             currentChat ? <Messages currentChat={currentChat} currentUser={currentUser} socket={socket}/>:<Welcome currentUser={currentUser}/>
             }
           </div>
        </div> 
