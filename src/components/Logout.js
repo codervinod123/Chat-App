@@ -10,7 +10,7 @@ const Logout = () => {
     
        const handleClick=async()=>{
           localStorage.clear();
-          navigate("/login");
+          navigate("/");
     }
   return (
       <Button onClick={handleClick}>
