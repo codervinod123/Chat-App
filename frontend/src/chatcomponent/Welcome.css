@@ -8,8 +8,8 @@ body{
     height: 100%;
     display: grid;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(135, 75, 188);
-    background: url("../Asset/images.png");
+    color: white;
+    background: url("../Asset/login_bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }

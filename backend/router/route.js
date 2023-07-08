@@ -52,9 +52,7 @@ router.post("/login",async(req,res)=>{
           const isMatched=await bcrypt.compare(password,isExist.password);
           if(isMatched)
           {
-           
              return res.status(200).json({Message:"Login Successfully",user});
-             
           }
           else
              return res.status(400).json({Message:"Can't login please login with valid pass"});  

@@ -64,13 +64,15 @@ const Login = () => {
       navigate("/chat");
     }
   };
+
+  
   return (
     <div className="register_container">
       <div className="form_container">
         <Navbar />
         <form onSubmit={(e) => handleSubmit(e)} className="from">
           <p>START FOR FREE</p>
-          <h2>Create new account</h2>
+          <h2>Log in account</h2>
           <span>
             New Member ? <Link to="/register">Register</Link>
           </span>

@@ -6,8 +6,9 @@
     flex-direction: column;
     /* ba/ckground: #e83743; */
     /* background: linear-gradient(to bottom, #de1781); */
+   
     overflow-x: hidden;
-    background: #525560;
+    
     font-family: 'Fira Sans', sans-serif;
    
 }
@@ -19,7 +20,10 @@
     /* margin: 4% 15%; */
     border-radius: 10px;
     background: linear-gradient(45deg, #282b36 0%, #282b36 100%);
+    background-repeat: no-repeat;
+    background-size:auto;
     padding: 2%;
+    background-image: url("../Asset/login_bg.jpg");
     
 }
 
@@ -92,6 +96,7 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 3rem;
     color: aliceblue;
+    
    
 }
 

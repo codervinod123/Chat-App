@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Home.css";
-import PIC from "../Asset/pic.jpg"
+import PIC from "../Asset/login_bg.jpg";
 import Navbar from './Navbar';
 
 const Home = () => {
@@ -29,8 +29,7 @@ const Home = () => {
 
                   </div>
                   <div className="animation">
-                    <img className='first' src={PIC} alt="picture1"/>
-                    <img className='second' src={PIC} alt="picture2" />
+                      <p>Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quibLoreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quibLoreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quibLoreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib Loreapiente nisi. Ratione nobis magnam eligendi, necessitatibus, adipisci quib</p>
                   </div>
               </div>
 

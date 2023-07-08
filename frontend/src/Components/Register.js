@@ -76,12 +76,12 @@ const Register = () => {
     }
    else if(!email)
    {
-        toast.error("Please Fill the image");
+        toast.error("Please Upload the image");
         return false;
    }
    else if(!phone)
    {
-     toast.error("Please Enter the obile");
+     toast.error("Please Enter the Mobile number");
      return false;
    }
     else if(password.length<=5)

@@ -53,7 +53,7 @@ const Chathome = () => {
 
     useEffect(()=>{
       if(currentUser){
-        socket.current=io("http://localhost:5000/"); 
+        socket.current=io("http://localhost:5000/chat"); 
         socket.current.emit("add-user",currentUser._id);
       }
   },[currentUser])
@@ -71,7 +71,7 @@ const Chathome = () => {
 
     const handleChatChange=(chat)=>{
       setCurrentChat(chat);
-      // console.log("vinod");
+       console.log("vinod");
    }
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import user from "../Asset/Suraiya.jpg";
 import "./Messages.css";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -6,19 +6,30 @@ import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import axios from "axios";
 
-const Messages = ({ currentChat, currentUser }) => {
+
+import {v4 as uuidv4} from "uuid";
+
+const Messages = ({ currentChat, currentUser ,socket}) => {
+
+
   const [messages, setMessages] = useState([]);
+  const [arrivalMessage, setArrivalMessage] = useState(null);
+
+  const scrollRef=useRef();
+
   useEffect(() => {
-    async function fetchMessage() {
-      const res = await axios.post("/getMessage", {
-        from: currentUser._id,
-        to: currentChat._id,
-      });
-      setMessages(res.data);
-      console.log(messages);
-      console.log("vinod");
+    if(currentChat){
+      async function fetchMessage() {
+        const res = await axios.post("/getMessage", {
+          from: currentUser._id,
+          to: currentChat._id,
+        });
+        setMessages(res.data);
+        console.log(res);
+        console.log("vinod");
+      }
+      fetchMessage();
     }
-    fetchMessage();
   }, [currentChat]);
 
   const navigate = useNavigate();
@@ -43,9 +54,41 @@ const Messages = ({ currentChat, currentUser }) => {
         message: msg,
       }),
     });
-    console.log(res);
-    console.log(msg);
+
+
+    // console.log(res);
+    // console.log(msg);
+
+    socket.current.emit("send-msg",{
+      to:currentChat._id,
+      from:currentUser._id,
+      message:msg,
+    })
+
+     const msgs=[...messages];
+     msgs.push({fromSelf:true,message:msg});
+     setMessages(msgs);
+     console.log(msgs);
+
   };
+
+
+  useEffect(()=>{
+    if(socket.current){
+        socket.current.on("msg-recieve",(msg)=>{
+            // console.log({msg});
+            setArrivalMessage({fromSelf:false,message:msg});
+        });
+    }
+},[])
+
+useEffect(()=>{
+    arrivalMessage && setMessages((prev)=>[...prev,arrivalMessage])
+},[arrivalMessage])
+
+useEffect(()=>{
+    scrollRef.current?.scrollIntoView({behaviour:"smooth"})
+},[messages]);
 
   return (
     <div className="current_chat">
@@ -61,7 +104,7 @@ const Messages = ({ currentChat, currentUser }) => {
         {
         messages.map((msg) => {
          return (
-            <div>
+            <div ref={scrollRef} key={uuidv4()}>
               <div className={`message  ${ msg.fromSelf ? "recieved" : "sended"} `}>
                 <div className="content">
                   <p>{msg.message}</p>

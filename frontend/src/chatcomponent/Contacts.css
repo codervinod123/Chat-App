@@ -28,13 +28,14 @@
     display: flex;
     gap: 40px;
     color: aliceblue;
-
+    
     position: relative;
 }
 .loggedin_candidate_content_bar svg{
     font-size: 23px;
     font-weight: 500;
     cursor: pointer;
+    
 }
 
 
@@ -139,4 +140,33 @@
 
 .selected{
     background: rgb(131, 60, 231);
+  }
+
+
+
+  
+  
+
+
+  .seittngOption{
+      list-style: none; 
+      padding: 15px 0;
+  }
+
+  .seittngOption>li{
+      cursor: pointer;
+      padding: 6px 15px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .seittngOption>li:hover{
+    background: #525560;
+  }
+
+  
+  .loggedin_candidate_content_bar>svg:hover{
+      background: rgb(196, 195, 191);
+      border-radius: 100%;
   }
