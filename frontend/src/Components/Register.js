@@ -76,7 +76,7 @@ const Register = () => {
     }
    else if(!email)
    {
-        toast.error("Please Upload the image");
+        toast.error("Please Enter the email");
         return false;
    }
    else if(!phone)
@@ -147,13 +147,6 @@ const Register = () => {
               >
                 Create Account
               </button>
-
-              {/* <button
-                onSubmit={(e) => handleSubmit(e)}
-                className="button create_acc"
-              >
-                Forgot Password
-              </button> */}
             </div>
           </form>
         </div>
