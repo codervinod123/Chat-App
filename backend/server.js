@@ -21,7 +21,7 @@ const middleware=(req,res,next)=>{
 
 
 
-const PORT=process.env.PORT;
+const PORT=process.env.PORT || 4000;
 
 const server=app.listen(PORT,()=>{
     console.log(`listening on port Number ${PORT}`);
@@ -30,7 +30,7 @@ const server=app.listen(PORT,()=>{
 
 const io=socket(server,{
     cors:{
-         origin:"http://localhost:5000/chat",
+        //  origin:"http://localhost:5000/chat",
          credentials:true,
     },
 });
