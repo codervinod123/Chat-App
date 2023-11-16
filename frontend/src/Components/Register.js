@@ -71,22 +71,22 @@ const Register = () => {
   const handleValidation=()=>{
      const { name, email, phone, password } = values;
      if(name.length<=3){
-        toast.error("Name Length is less than 4");
+        toast.error("Name Length is less than 4",{theme:"dark"});
         return false;
     }
    else if(!email)
    {
-        toast.error("Please Enter the email");
+        toast.error("Please Enter the email",{theme:"dark"});
         return false;
    }
    else if(!phone)
    {
-     toast.error("Please Enter the Mobile number");
+     toast.error("Please Enter the Mobile number",{theme:"dark"});
      return false;
    }
     else if(password.length<=5)
     {
-        toast.error("Password is too short");
+        toast.error("Password is too short",{theme:"dark"});
         return false;
     }
     else

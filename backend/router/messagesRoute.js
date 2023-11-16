@@ -26,36 +26,20 @@ router.post('/addMessage',async(req,res)=>{
 })
 
 
-// try {
-     
-
-//      const projectMessages=messages.map((msg)=>{
-//          return {
-//              fromSelf: msg.sender.toString()===from ,
-//              message:msg.message.text,
-//          };
-//      });
-//      res.json(projectMessages);
-
- 
 
 router.post('/getMessage',async(req,res)=>{
     
     try {
-     //    const {from,to}=req.body;
-     //    const messages= await Message.find({
-     //      users:{
-     //           $all:[from,to],
-     //      },
-     //    }).sort({updatedAt:1});
+    
 
         const {from,to}=req.body;
-     const messages=await Message.find({
-         users:{
-             $all :[from,to],
-         },
-     }).sort({updatedAt: 1});
-     const projectMessages=messages.map((msg)=>{
+        const messages=await Message.find({
+           users:{
+               $all :[from,to],
+             },
+       }).sort({updatedAt: 1});
+       
+       const projectMessages=messages.map((msg)=>{
                    return {
                        fromSelf: msg.sender.toString()===from,
                        message:msg.message.text,
@@ -69,15 +53,7 @@ router.post('/getMessage',async(req,res)=>{
           
 
 
-     //    const projectedMessage=messages.map((msg)=>{
-     //      return {
-     //           fromSelf:msg.sender.toString()===from,
-     //           message:msg.message.text
-     //      };
-     //    })
-
-     //    console.log(messages);
-     //   return res.status(200).json(projectedMessage);
+    
        
     } catch (error) {
        return res.status(400).send("Something went wrong",error)

@@ -31,6 +31,8 @@ router.post('/register',async(req,res)=>{
     res.status(400).json({Message:"User has not added to the database"});
   }
 
+  res.send("login");
+
 })
 
 
