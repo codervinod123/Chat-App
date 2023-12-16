@@ -9,6 +9,11 @@ router.get('/',(req,res)=>{
 })
 
 
+router.get('/testing',(req,res)=>{
+  res.send("hello from testing side");
+})
+
+
 router.post('/register',async(req,res)=>{
     const {name,email,phone,password}=req.body;
     if(!name || !email || !phone || !password )
